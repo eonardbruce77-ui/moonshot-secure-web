@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowForward, TouchApp, Videocam, Security, Cable, ElectricalServices } from "@mui/icons-material";
 import { Button } from "@/components/ui/button";
+import electricianHero from "@/assets/electrician-hero.jpg";
 
 const Hero = () => {
   const floatingIcons = [
@@ -48,7 +49,8 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 py-20 pt-32">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
+          <div className="text-center lg:text-left order-2 lg:order-1">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -100,7 +102,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-12 sm:mt-16 flex flex-wrap justify-center gap-6 sm:gap-8 text-sm text-muted-foreground"
+            className="mt-12 sm:mt-16 flex flex-wrap justify-center lg:justify-start gap-6 sm:gap-8 text-sm text-muted-foreground"
           >
             <div className="flex items-center gap-2">
               <Security className="text-primary" />
@@ -114,6 +116,63 @@ const Hero = () => {
               <span className="text-2xl">✓</span>
               <span>Quality Guaranteed</span>
             </div>
+          </motion.div>
+          </div>
+
+          {/* Electrician Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, x: 50 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="order-1 lg:order-2 relative"
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 mix-blend-overlay z-10" />
+              <motion.div
+                animate={{
+                  scale: [1, 1.05, 1],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 blur-xl z-0"
+              />
+              <img
+                src={electricianHero}
+                alt="Professional electrician from New Moon Entrepreneur"
+                className="relative z-20 w-full h-auto object-cover"
+                loading="eager"
+              />
+            </div>
+            {/* Floating badges */}
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 3, repeat: Infinity }}
+              className="absolute -bottom-6 -left-6 glass-card p-4 rounded-xl shadow-lg hidden sm:block"
+            >
+              <div className="flex items-center gap-2">
+                <Security className="text-primary text-3xl" />
+                <div>
+                  <div className="text-sm font-semibold">Certified</div>
+                  <div className="text-xs text-muted-foreground">Professionals</div>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+              className="absolute -top-6 -right-6 glass-card p-4 rounded-xl shadow-lg hidden sm:block"
+            >
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">⚡</span>
+                <div>
+                  <div className="text-sm font-semibold">24/7</div>
+                  <div className="text-xs text-muted-foreground">Support</div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

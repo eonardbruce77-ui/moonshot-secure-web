@@ -2,15 +2,34 @@ import { useState, useEffect } from "react";
 import { Menu, Close } from "@mui/icons-material";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import Logo from "@/components/Logo";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      // Detect active section
+      const sections = ["home", "services", "why-us", "process", "testimonials", "contact"];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
+    
+    handleScroll(); // Initial call
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -42,13 +61,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-xl sm:text-2xl font-bold"
-          >
-            <span className="text-gradient">New Moon Entrepreneur</span>
-          </motion.div>
+          <Logo />
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
@@ -56,9 +69,18 @@ const Navbar = () => {
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
-                className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+                className={`text-foreground hover:text-primary transition-colors duration-300 font-medium relative ${
+                  activeSection === link.href.substring(1) ? "text-primary" : ""
+                }`}
               >
                 {link.name}
+                {activeSection === link.href.substring(1) && (
+                  <motion.div
+                    layoutId="activeSection"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
               </button>
             ))}
             <Button

@@ -2,9 +2,7 @@ import { motion } from "framer-motion";
 import { WhatsApp } from "@mui/icons-material";
 
 const WhatsAppButton = () => {
-  const phoneNumber = "254795122368"; // Kenya format (remove leading 0, add 254)
-  const message = "Hello! I'm interested in your technology and security services.";
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = "https://wa.link/37uvbj";
 
   return (
     <motion.a

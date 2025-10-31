@@ -52,40 +52,54 @@ const Testimonials = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              <Card className="glass-card h-full hover:glow-blue transition-all duration-300 hover:scale-105">
-                <CardContent className="p-6 sm:p-8">
-                  <FormatQuote className="text-primary text-5xl mb-4 opacity-50" />
-                  
-                  <p className="text-base sm:text-lg text-muted-foreground mb-6 leading-relaxed">
-                    {testimonial.text}
-                  </p>
+        <div className="relative max-w-6xl mx-auto">
+          <div className="overflow-x-auto pb-4 scrollbar-hide">
+            <div className="flex gap-6 lg:gap-8 px-4" style={{ width: "max-content" }}>
+              {testimonials.map((testimonial, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="w-[90vw] sm:w-[450px] md:w-[500px] flex-shrink-0"
+                >
+                  <Card className="glass-card h-full hover:glow-blue transition-all duration-300 hover:scale-105">
+                    <CardContent className="p-6 sm:p-8">
+                      <FormatQuote className="text-primary text-5xl mb-4 opacity-50" />
+                      
+                      <p className="text-base sm:text-lg text-muted-foreground mb-6 leading-relaxed">
+                        {testimonial.text}
+                      </p>
 
-                  <div className="flex items-center gap-2 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="text-secondary text-xl" />
-                    ))}
-                  </div>
+                      <div className="flex items-center gap-2 mb-4">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="text-secondary text-xl" />
+                        ))}
+                      </div>
 
-                  <div className="flex items-center gap-3">
-                    <AccountCircle className="text-primary text-5xl" />
-                    <div>
-                      <div className="font-semibold text-lg">{testimonial.name}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+                      <div className="flex items-center gap-3">
+                        <AccountCircle className="text-primary text-5xl" />
+                        <div>
+                          <div className="font-semibold text-lg">{testimonial.name}</div>
+                          <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+          <style>{`
+            .scrollbar-hide::-webkit-scrollbar {
+              display: none;
+            }
+            .scrollbar-hide {
+              -ms-overflow-style: none;
+              scrollbar-width: none;
+            }
+          `}</style>
         </div>
       </div>
     </section>
