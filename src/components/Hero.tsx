@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowForward, TouchApp, Videocam, Security, Cable, ElectricalServices } from "@mui/icons-material";
 import { Button } from "@/components/ui/button";
-import electricianHero from "@/assets/electrician-hero.jpg";
+import electricianHero from "@/assets/electrician-hero.png";
 
 const Hero = () => {
   const floatingIcons = [
@@ -48,7 +48,7 @@ const Hero = () => {
       ))}
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 py-20 pt-32">
+      <div className="relative z-10 container mx-auto px-2 sm:px-4 py-20 pt-32">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
           <div className="text-center lg:text-left order-2 lg:order-1">
           <motion.div
