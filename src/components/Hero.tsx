@@ -124,15 +124,15 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.9, x: 50 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="order-1 lg:order-2 relative"
+            className="order-1 lg:order-2 relative h-[75vh] flex items-center"
           >
-            <div className="relative rounded-3xl overflow-hidden">
+            <div className="relative rounded-3xl overflow-hidden w-full h-full">
               {/* 3D Shadow layers */}
               <div className="absolute -inset-4 bg-gradient-to-br from-primary/30 via-secondary/20 to-primary/30 rounded-3xl blur-2xl opacity-60 animate-pulse-glow" />
               <div className="absolute -inset-2 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-xl opacity-80" />
               
               {/* Main image container */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl transform perspective-1000">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl transform perspective-1000 h-full">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 mix-blend-overlay z-10" />
                 <motion.div
                   animate={{
@@ -149,7 +149,7 @@ const Hero = () => {
                 <motion.img
                   src={electricianHero}
                   alt="Professional electrician from New Moon Entrepreneur"
-                  className="relative z-20 w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
+                  className="relative z-20 w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                   loading="eager"
                   animate={{
                     y: [0, -8, 0],
