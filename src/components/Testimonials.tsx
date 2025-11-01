@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
-import { FormatQuote, Star, AccountCircle } from "@mui/icons-material";
+import { FormatQuote, Star, AccountCircle, ChevronLeft, ChevronRight } from "@mui/icons-material";
 import { Card, CardContent } from "@/components/ui/card";
+import { useRef, useEffect, useState } from "react";
 
 const Testimonials = () => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isAutoScrolling, setIsAutoScrolling] = useState(true);
+
   const testimonials = [
     {
       name: "James Mutua",
@@ -30,13 +34,49 @@ const Testimonials = () => {
     },
   ];
 
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container || !isAutoScrolling) return;
+
+    const scrollWidth = container.scrollWidth;
+    const clientWidth = container.clientWidth;
+    let scrollPosition = 0;
+
+    const scroll = () => {
+      if (!container) return;
+      scrollPosition += 1;
+      if (scrollPosition >= scrollWidth - clientWidth) {
+        scrollPosition = 0;
+      }
+      container.scrollLeft = scrollPosition;
+    };
+
+    const intervalId = setInterval(scroll, 30);
+
+    return () => clearInterval(intervalId);
+  }, [isAutoScrolling]);
+
+  const handleManualScroll = (direction: 'left' | 'right') => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    
+    setIsAutoScrolling(false);
+    const scrollAmount = 500;
+    container.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth'
+    });
+    
+    setTimeout(() => setIsAutoScrolling(true), 3000);
+  };
+
   return (
     <section id="testimonials" className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+      <div className="container mx-auto px-2 sm:px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -52,8 +92,24 @@ const Testimonials = () => {
           </p>
         </motion.div>
 
-        <div className="relative max-w-6xl mx-auto">
-          <div className="overflow-x-auto pb-4 scrollbar-hide">
+        <div className="relative max-w-7xl mx-auto">
+          {/* Scroll Controls */}
+          <button
+            onClick={() => handleManualScroll('left')}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-primary/20 hover:bg-primary backdrop-blur-sm flex items-center justify-center transition-all duration-300 hover:scale-110 glow-blue"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft className="text-2xl" />
+          </button>
+          <button
+            onClick={() => handleManualScroll('right')}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-primary/20 hover:bg-primary backdrop-blur-sm flex items-center justify-center transition-all duration-300 hover:scale-110 glow-blue"
+            aria-label="Scroll right"
+          >
+            <ChevronRight className="text-2xl" />
+          </button>
+
+          <div ref={scrollContainerRef} className="overflow-x-auto pb-4 scrollbar-hide">
             <div className="flex gap-6 lg:gap-8 px-4" style={{ width: "max-content" }}>
               {testimonials.map((testimonial, index) => (
                 <motion.div

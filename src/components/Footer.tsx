@@ -1,5 +1,6 @@
 import { NavigateNext, Facebook, Twitter, LinkedIn, Instagram, KeyboardArrowUp } from "@mui/icons-material";
 import { Button } from "@/components/ui/button";
+import Logo from "@/components/Logo";
 
 const Footer = () => {
   const quickLinks = [
@@ -40,11 +41,13 @@ const Footer = () => {
         <KeyboardArrowUp className="text-2xl" />
       </button>
 
-      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <div className="container mx-auto px-2 sm:px-4 py-12 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold text-gradient mb-4">New Moon Entrepreneur</h3>
+            <div className="mb-4">
+              <Logo />
+            </div>
             <p className="text-muted-foreground mb-4">
               Your trusted partner for technology and security solutions in Kenya. Professional installation, quality products, and 24/7 support.
             </p>

@@ -126,25 +126,41 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="order-1 lg:order-2 relative"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 mix-blend-overlay z-10" />
-              <motion.div
-                animate={{
-                  scale: [1, 1.05, 1],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 blur-xl z-0"
-              />
-              <img
-                src={electricianHero}
-                alt="Professional electrician from New Moon Entrepreneur"
-                className="relative z-20 w-full h-auto object-cover"
-                loading="eager"
-              />
+            <div className="relative rounded-3xl overflow-hidden">
+              {/* 3D Shadow layers */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-primary/30 via-secondary/20 to-primary/30 rounded-3xl blur-2xl opacity-60 animate-pulse-glow" />
+              <div className="absolute -inset-2 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-xl opacity-80" />
+              
+              {/* Main image container */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl transform perspective-1000">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 mix-blend-overlay z-10" />
+                <motion.div
+                  animate={{
+                    scale: [1, 1.02, 1],
+                    rotate: [0, 0.5, 0],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 blur-2xl z-0"
+                />
+                <motion.img
+                  src={electricianHero}
+                  alt="Professional electrician from New Moon Entrepreneur"
+                  className="relative z-20 w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
+                  loading="eager"
+                  animate={{
+                    y: [0, -8, 0],
+                  }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                />
+              </div>
             </div>
             {/* Floating badges */}
             <motion.div
