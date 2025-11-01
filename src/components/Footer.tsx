@@ -41,7 +41,8 @@ const Footer = () => {
         <KeyboardArrowUp className="text-2xl" />
       </button>
 
-      <div className="container mx-auto px-2 sm:px-4 py-12 sm:py-16">
+      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-12 sm:py-16">
+        <div className="max-w-[1600px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Company Info */}
           <div>
@@ -101,6 +102,7 @@ const Footer = () => {
         <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} New Moon Entrepreneur. All rights reserved.</p>
           <p className="mt-2">Professional Technology & Security Solutions in Kenya</p>
+        </div>
         </div>
       </div>
     </footer>

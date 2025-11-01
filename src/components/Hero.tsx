@@ -48,8 +48,8 @@ const Hero = () => {
       ))}
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-2 sm:px-4 py-20 pt-32">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
+      <div className="relative z-10 w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-20 pt-32">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 xl:gap-20 items-center w-full max-w-[1600px] mx-auto">
           <div className="text-center lg:text-left order-2 lg:order-1">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

@@ -86,7 +86,8 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-muted/30">
-      <div className="container mx-auto px-2 sm:px-4 relative z-10">
+      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 relative z-10">
+        <div className="max-w-[1600px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -234,6 +235,7 @@ const Contact = () => {
               </Button>
             </form>
           </motion.div>
+        </div>
         </div>
       </div>
     </section>
