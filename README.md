@@ -71,3 +71,32 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+## SEO Optimization
+
+This project is optimized for search engines with:
+
+- **Comprehensive Meta Tags**: Title, description, keywords targeting Kenyan market
+- **Structured Data**: JSON-LD schema for local business
+- **Open Graph Tags**: Social media optimization
+- **Semantic HTML**: Proper use of header, main, footer tags
+- **Mobile Optimization**: Fully responsive design
+- **Sitemap**: Available at /sitemap.xml
+- **Robots.txt**: Configured for optimal crawling
+- **Kenyan Market Focus**: Keywords and content optimized for Nairobi, Mombasa, Kisumu and Kenya-wide searches
+
+### Key Target Keywords
+- CCTV installation Kenya
+- Security systems Nairobi
+- Alarm systems Kenya
+- Networking services Nairobi
+- Electrical wiring Kenya
+- Surveillance systems Mombasa
+- Home security Kisumu
+
+### Mobile Responsiveness
+The entire website is fully responsive with:
+- Breakpoints: mobile (< 640px), tablet (640-1024px), desktop (> 1024px)
+- Touch-friendly navigation
+- Optimized images and loading performance
+- Adaptive text sizing and spacing

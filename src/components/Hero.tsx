@@ -56,7 +56,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
               Secure Your Future with{" "}
               <span className="text-gradient">Smart Technology Solutions</span>
             </h1>
@@ -66,34 +66,34 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 sm:mb-12"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 sm:mb-8 md:mb-12"
           >
-            Professional CCTV, Networking, Electrical & Security Systems Installation
+            Professional CCTV, Networking, Electrical & Security Systems Installation in Nairobi, Mombasa, Kisumu & Across Kenya
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-stretch sm:items-center"
           >
             <Button
               onClick={() => scrollToSection("#contact")}
               size="lg"
               variant="secondary"
-              className="glow-orange text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 w-full sm:w-auto"
+              className="glow-orange text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 w-full sm:w-auto"
             >
               Get Free Quote
-              <ArrowForward className="ml-2" />
+              <ArrowForward className="ml-2 text-lg sm:text-xl" />
             </Button>
             <Button
               onClick={() => scrollToSection("#services")}
               size="lg"
               variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 w-full sm:w-auto"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 w-full sm:w-auto"
             >
               Our Services
-              <TouchApp className="ml-2" />
+              <TouchApp className="ml-2 text-lg sm:text-xl" />
             </Button>
           </motion.div>
 
@@ -102,19 +102,19 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-12 sm:mt-16 flex flex-wrap justify-center lg:justify-start gap-6 sm:gap-8 text-sm text-muted-foreground"
+            className="mt-8 sm:mt-12 md:mt-16 flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 md:gap-8 text-xs sm:text-sm text-muted-foreground"
           >
             <div className="flex items-center gap-2">
-              <Security className="text-primary" />
-              <span>Licensed & Certified</span>
+              <Security className="text-primary text-lg sm:text-xl" />
+              <span className="whitespace-nowrap">Licensed & Certified</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-2xl">⚡</span>
-              <span>24/7 Support</span>
+              <span className="text-xl sm:text-2xl">⚡</span>
+              <span className="whitespace-nowrap">24/7 Support</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-2xl">✓</span>
-              <span>Quality Guaranteed</span>
+              <span className="text-xl sm:text-2xl">✓</span>
+              <span className="whitespace-nowrap">Quality Guaranteed</span>
             </div>
           </motion.div>
           </div>
@@ -124,7 +124,7 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.9, x: 50 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="order-1 lg:order-2 relative h-[75vh] flex items-center"
+            className="order-1 lg:order-2 relative h-[50vh] sm:h-[60vh] md:h-[65vh] lg:h-[75vh] flex items-center"
           >
             <div className="relative rounded-3xl overflow-hidden w-full h-full">
               {/* 3D Shadow layers */}
@@ -166,12 +166,12 @@ const Hero = () => {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
-              className="absolute -bottom-6 -left-6 glass-card p-4 rounded-xl shadow-lg hidden sm:block"
+              className="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 glass-card p-3 sm:p-4 rounded-xl shadow-lg hidden sm:block"
             >
               <div className="flex items-center gap-2">
-                <Security className="text-primary text-3xl" />
+                <Security className="text-primary text-2xl sm:text-3xl" />
                 <div>
-                  <div className="text-sm font-semibold">Certified</div>
+                  <div className="text-xs sm:text-sm font-semibold">Certified</div>
                   <div className="text-xs text-muted-foreground">Professionals</div>
                 </div>
               </div>
@@ -179,12 +179,12 @@ const Hero = () => {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-              className="absolute -top-6 -right-6 glass-card p-4 rounded-xl shadow-lg hidden sm:block"
+              className="absolute -top-4 sm:-top-6 -right-4 sm:-right-6 glass-card p-3 sm:p-4 rounded-xl shadow-lg hidden sm:block"
             >
               <div className="flex items-center gap-2">
-                <span className="text-2xl">⚡</span>
+                <span className="text-xl sm:text-2xl">⚡</span>
                 <div>
-                  <div className="text-sm font-semibold">24/7</div>
+                  <div className="text-xs sm:text-sm font-semibold">24/7</div>
                   <div className="text-xs text-muted-foreground">Support</div>
                 </div>
               </div>

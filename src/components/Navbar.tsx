@@ -59,12 +59,12 @@ const Navbar = () => {
         isScrolled ? "glass-card shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div className="flex items-center justify-between h-14 sm:h-16 md:h-20 max-w-[1600px] mx-auto">
           <Logo />
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
             {navLinks.map((link) => (
               <button
                 key={link.name}
@@ -95,13 +95,13 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2"
+            className="lg:hidden p-2 hover:bg-muted rounded-lg transition-colors"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
-              <Close className="text-foreground" />
+              <Close className="text-foreground text-2xl" />
             ) : (
-              <Menu className="text-foreground" />
+              <Menu className="text-foreground text-2xl" />
             )}
           </button>
         </div>
