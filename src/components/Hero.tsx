@@ -124,16 +124,16 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.9, x: 50 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="order-1 lg:order-2 relative h-[50vh] sm:h-[60vh] md:h-[65vh] lg:h-[75vh] flex items-center"
+            className="order-1 lg:order-2 relative h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] xl:h-[75vh] flex items-center"
           >
-            <div className="relative rounded-3xl overflow-hidden w-full h-full">
-              {/* 3D Shadow layers */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-primary/30 via-secondary/20 to-primary/30 rounded-3xl blur-2xl opacity-60 animate-pulse-glow" />
-              <div className="absolute -inset-2 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-xl opacity-80" />
+            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden w-full h-full">
+              {/* 3D Shadow layers - reduced on mobile */}
+              <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-br from-primary/20 sm:from-primary/30 via-secondary/10 sm:via-secondary/20 to-primary/20 sm:to-primary/30 rounded-2xl sm:rounded-3xl blur-xl sm:blur-2xl opacity-40 sm:opacity-60 animate-pulse-glow" />
+              <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-br from-primary/10 sm:from-primary/20 to-secondary/10 sm:to-secondary/20 rounded-2xl sm:rounded-3xl blur-lg sm:blur-xl opacity-60 sm:opacity-80" />
               
               {/* Main image container */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl transform perspective-1000 h-full">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 mix-blend-overlay z-10" />
+              <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl transform perspective-1000 h-full">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 sm:from-primary/30 to-secondary/20 sm:to-secondary/30 mix-blend-overlay z-10" />
                 <motion.div
                   animate={{
                     scale: [1, 1.02, 1],
@@ -144,12 +144,12 @@ const Hero = () => {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 blur-2xl z-0"
+                  className="absolute inset-0 bg-gradient-to-br from-primary/10 sm:from-primary/20 to-secondary/10 sm:to-secondary/20 blur-xl sm:blur-2xl z-0"
                 />
                 <motion.img
                   src={electricianHero}
                   alt="Professional electrician from New Moon Entrepreneur"
-                  className="relative z-20 w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                  className="relative z-20 w-full h-full object-cover object-center sm:object-center transform hover:scale-105 transition-transform duration-700"
                   loading="eager"
                   animate={{
                     y: [0, -8, 0],
