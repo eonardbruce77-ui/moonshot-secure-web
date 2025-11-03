@@ -27,7 +27,7 @@ const TeamSection = () => {
 
     const intervalId = setInterval(() => {
       scrollNext();
-    }, 3000); // Auto-scroll every 3 seconds
+    }, 5000); // Auto-scroll every 5 seconds
 
     return () => clearInterval(intervalId);
   }, [emblaApi, scrollNext]);
